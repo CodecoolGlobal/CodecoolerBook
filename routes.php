@@ -1,7 +1,8 @@
 <?php
 
 $router->define([
-    'CodecoolerBook' => 'controllers/index.php',
+    'codecoolerbook' => 'controllers/index.php',
+    'codecoolerbook/register' => 'controllers/register.php',
 //    'Todolist/add' => 'controllers/add.php',
 //    'Todolist/about/culture' => 'controllers/about-culture.php',
 //    'Todolist/contact' => 'controllers/contact.php',
