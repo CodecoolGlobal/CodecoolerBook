@@ -9,7 +9,8 @@ if( isset($_POST['submit']) ){
     if($userEmails === false){
         $userInputEmail = $_POST["email"];
         $userInputPass = $_POST["pass"];
-        $database -> addUser("user", $userInputEmail, $userInputPass );
+        $hashedPassword = password_hash($userInputPass, PASSWORD_DEFAULT);
+        $database -> addUser("user", $userInputEmail, $hashedPassword );
      $userFeedBack = " Succes";
     }else{
         $userFeedBack = "Not Succes";
