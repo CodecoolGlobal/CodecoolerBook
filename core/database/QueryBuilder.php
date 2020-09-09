@@ -20,6 +20,12 @@ class QueryBuilder
       return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function selectUserData($table, $column, $id){
+        $stmt = $this->pdo->query("SELECT {$column} FROM {$table} WHERE user_id='".$id."'");
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 //    public function deleteEntry($table, $data)
 //    {
 //        $query = "UPDATE {$table} SET {$data['row']} = IF({$data['row']} = 0, 1, 0) WHERE id = :id ";
