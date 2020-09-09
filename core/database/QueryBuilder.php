@@ -30,21 +30,20 @@ class QueryBuilder
 //        return $this->selectAll($table);
 //    }
 //
-//    public function addTask($table, $data){
-//        foreach ($data['data'] as $entry) {
-//            $innerData = [
-//                'name' => $entry['taskName'],
-//                'description' => $entry['taskDescription'],
-//                'due_date' => $entry['taskDueDate'],
-//                'image' => $entry['taskImage']
-//            ];
-//
-//            $query = "INSERT INTO {$table} (name, description, due_date, image ) VALUES (:name, :description, :due_date, :image)";
-//            $stmt = $this->pdo->prepare($query);
-//            $stmt->execute($innerData);
-//        }
-//
-//        return 'Check DB!' ;
-//    }
+    public function addUser($table, $email, $pass){
+
+            $innerData = [
+                'email' => $email,
+                'password' => $pass
+
+            ];
+
+            $query = "INSERT INTO {$table} (email, password ) VALUES (:email, :password)";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($innerData);
+
+
+        return 'Check DB!' ;
+    }
 
 }
