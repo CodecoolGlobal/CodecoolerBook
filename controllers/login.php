@@ -3,7 +3,7 @@
     if( isset($_POST['submit']) ){
     $userInputEmail = $_POST["email"];
     $userDetails = $database -> select("user", "*", $userInputEmail );
-    if($userDetails && $userDetails['password'] === $_POST['password']){
+    if($userDetails && password_verify($_POST['password'],$userDetails['password'])){
         $userInputEmail = $_POST["email"];
         $userInputPass = $_POST["password"];
         $userId = $userDetails['id'];
