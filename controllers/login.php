@@ -11,12 +11,13 @@
 //            session_set_cookie_params((3600*24*30),"/");
 //        }
         session_start();
-        session_destroy();
+//        session_destroy();
         $_SESSION['userId'] = $userId;
         $_SESSION['userEmail'] = $userInputEmail;
         $userFeedback = "Succes";
         $userInfo = $database->selectUserData("user_profile","*",$userId);
         $counter =0;
+        var_dump($_SESSION);
         foreach ($userInfo as $item){
             if($item===null){
                 $counter++;
@@ -24,9 +25,10 @@
         }
 
         if($counter > 4){
-            header('Location: http://localhost:8080/codecoolerbook/editprofile');
+            header('Location: http://localhost/codecoolerbook/editprofile');
         } else {
-            header('Location: http://localhost:8080/codecoolerbook/wall?id='.$_SESSION['userId']);
+            header('Location: http://localhost/codecoolerbook/wall?id='.$_SESSION['userId']);
+//            exit();
         }
         var_dump($userInfo);
 
