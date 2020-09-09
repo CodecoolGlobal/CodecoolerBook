@@ -14,12 +14,12 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-//    public function selectAll($table){
-//        $stmt = $this->pdo->query("SELECT * FROM {$table} WHERE deleted=0");
-//
-//        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-//    }
-//
+    public function select($table, $column, $email){
+        $stmt = $this->pdo->query("SELECT {$column} FROM {$table} WHERE email='".$email."'");
+
+      return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 //    public function deleteEntry($table, $data)
 //    {
 //        $query = "UPDATE {$table} SET {$data['row']} = IF({$data['row']} = 0, 1, 0) WHERE id = :id ";
