@@ -9,4 +9,5 @@ $router->define([
 //    'codecoolerbook/editprofile' => 'controllers/editprofile.php',
 //    'codecoolerbook/search' => 'controllers/search.php',
 //    'Todolist/models/addTask' => 'models/add.model.php'
+    'codecoolerbook/models/getpostdata' => 'models/apiAjaxQueryBuilder.php'
 ]);
